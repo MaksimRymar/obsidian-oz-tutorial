@@ -1,0 +1,179 @@
+vault_dir: Vault
+inbox_dir: Vault/Inbox
+weekly_digest_dir: Vault/Weekly-Digests
+state_file: Vault/.oz_agent_state.json
+
+limits:
+  hn_top: 40
+  hn_new: 40
+  github_trending: 30
+  devto: 30
+  medium_tag: 30
+  rss: 50
+
+pypi_libraries:
+  - pandas
+  - polars
+  - duckdb
+  - jupyter
+  - jupyterlab
+  - streamlit
+  - plotly
+  - pydantic
+  - dbt-core
+  - apache-airflow
+  - dagster
+  - prefect
+
+rss_feeds:
+  - name: Real Python
+    url: https://realpython.com/atom.xml
+    default_domain: Python
+  - name: Towards Data Science
+    url: https://towardsdatascience.com/feed
+    default_domain: AI-Tools
+  - name: dbt Blog
+    url: https://www.getdbt.com/blog/feed.xml
+    default_domain: SQL
+  - name: OpenAI News
+    url: https://openai.com/news/rss.xml
+    default_domain: AI-Tools
+  - name: Zendesk Engineering (Medium)
+    url: https://medium.com/feed/zendesk-engineering
+    default_domain: Zendesk
+
+# Some vendor blogs don't expose a reliable RSS feed; the agent will scrape HTML.
+html_sources:
+  - name: Tableau Blog
+    url: https://www.tableau.com/blog
+    default_domain: Tableau
+  - name: Tableau Developer
+    url: https://www.tableau.com/developer
+    default_domain: Tableau
+  - name: Zendesk Engineering Blog
+    url: https://zendesk.engineering/
+    default_domain: Zendesk
+  - name: Anthropic News
+    url: https://www.anthropic.com/news
+    default_domain: AI-Tools
+
+devto_tags:
+  - python
+  - sql
+  - dataanalytics
+  - businessintelligence
+
+medium_tags:
+  - python
+  - sql
+  - data-analytics
+  - business-intelligence
+
+github_trending:
+  languages:
+    - python
+    - sql
+    - jupyter-notebook
+  keywords_any:
+    - data
+    - analytics
+    - etl
+    - elt
+    - sql
+    - duckdb
+    - parquet
+    - pandas
+    - polars
+    - dbt
+    - bigquery
+    - snowflake
+    - postgres
+    - postgresql
+    - llm
+    - rag
+
+classification:
+  domain_keywords:
+    Python:
+      - pandas
+      - polars
+      - duckdb
+      - jupyter
+      - jupyterlab
+      - streamlit
+      - plotly
+      - pydantic
+    SQL:
+      - sql
+      - cte
+      - window function
+      - query plan
+      - index
+      - postgres
+      - postgresql
+      - snowflake
+      - bigquery
+      - dbt
+      - airflow
+      - dagster
+      - prefect
+    AI-Tools:
+      - llm
+      - rag
+      - langchain
+      - prompt
+      - text-to-sql
+      - claude
+      - chatgpt
+      - gemini
+      - embeddings
+    Zendesk:
+      - zendesk
+      - explore
+      - answer bot
+      - csat
+      - nps
+      - support
+    Tableau:
+      - tableau
+      - lod
+      - level of detail
+      - tableau prep
+      - power bi
+      - looker
+      - superset
+      - metabase
+    Presentations:
+      - storytelling
+      - executive summary
+      - deck
+      - slides
+      - marp
+      - reveal.js
+      - gamma
+      - beautiful.ai
+      - python-pptx
+    Productivity:
+      - obsidian
+      - notion
+      - zapier
+      - make.com
+      - n8n
+      - automation
+      - git
+      - version control
+      - certification
+
+  tag_keywords:
+    python: [python, pandas, polars, duckdb, jupyter, streamlit, plotly, pydantic]
+    sql: [sql, cte, window, postgres, postgresql, snowflake, bigquery, dbt]
+    ai: [llm, rag, langchain, embeddings, prompt, text-to-sql, chatgpt, claude, gemini]
+    zendesk: [zendesk, explore, answer bot, csat, nps]
+    tableau: [tableau, lod, power bi, looker, superset, metabase]
+    presentations: [storytelling, slides, deck, executive summary, marp, reveal.js, gamma, beautiful.ai]
+    career: [career, certification, interview, resume]
+    library: [library, package, pypi]
+    feature: [feature, release, changelog]
+    tutorial: [tutorial, guide, how-to]
+    best-practice: [best practice, best-practices, pattern]
+    tool: [tool, app, platform]
