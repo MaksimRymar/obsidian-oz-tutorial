@@ -34,7 +34,13 @@ def _is_relevant(item: DiscoveredItem, all_keywords: list[str]) -> bool:
     if item.source == "PyPI":
         return True
 
-    broad = item.id.startswith("hn:") or item.id.startswith("ghtrending:") or item.id.startswith("html:")
+    broad = (
+        item.id.startswith("hn:")
+        or item.id.startswith("ghtrending:")
+        or item.id.startswith("html:")
+        or item.id.startswith("devto:")
+        or item.id.startswith("medium:")
+    )
     if not broad:
         return True
 
@@ -44,6 +50,14 @@ def _is_relevant(item: DiscoveredItem, all_keywords: list[str]) -> bool:
 
 def _note_body(summary_text: str, how_to_apply: str, url: str, related: list[str], relevance: str) -> str:
     lines: list[str] = []
+    # Put a short 1-line summary up top for fast scanning in Obsidian.
+    tldr = " ".join((summary_text or "").strip().split())
+    if tldr:
+        if len(tldr) > 220:
+            tldr = tldr[:220].rstrip() + "…"
+        lines.append(f"> **TL;DR:** {tldr}")
+        lines.append("")
+
     lines.append("## What’s new and why it matters")
     lines.append(summary_text.strip())
     lines.append("\n## How to apply")
@@ -59,14 +73,39 @@ def _note_body(summary_text: str, how_to_apply: str, url: str, related: list[str
     return "\n".join(lines)
 
 
+def _inject_truststore() -> None:
+    """Use system trust store (macOS Keychain / corporate root CAs) if available.
+
+    This helps in environments where TLS is intercepted by a proxy that uses a locally-trusted CA,
+    which is not present in certifi.
+    """
+
+    try:
+        import truststore
+
+        truststore.inject_into_ssl()
+    except Exception:
+        # Best-effort only
+        return
+
+
+def _resolve_from(base: Path, p: Path) -> Path:
+    if p.is_absolute():
+        return p
+    return (base / p).resolve()
+
+
 def run(config_path: str | Path) -> None:
+    _inject_truststore()
     cfg = load_config(config_path)
 
-    # Resolve paths relative to repo root / current working dir
-    vault_dir = Path(cfg.vault_dir)
-    inbox_dir = Path(cfg.inbox_dir)
-    weekly_digest_dir = Path(cfg.weekly_digest_dir)
-    state_path = Path(cfg.state_file)
+    base_dir = Path(config_path).resolve().parent
+
+    # Resolve paths relative to the config file directory (repo root in typical usage)
+    vault_dir = _resolve_from(base_dir, Path(cfg.vault_dir))
+    inbox_dir = _resolve_from(base_dir, Path(cfg.inbox_dir))
+    weekly_digest_dir = _resolve_from(base_dir, Path(cfg.weekly_digest_dir))
+    state_path = _resolve_from(base_dir, Path(cfg.state_file))
 
     ensure_dirs(vault_dir)
 
@@ -82,28 +121,49 @@ def run(config_path: str | Path) -> None:
     discovered: list[DiscoveredItem] = []
 
     # HackerNews
-    discovered += hackernews.fetch_top(limit=cfg.limits.hn_top)
-    discovered += hackernews.fetch_new(limit=cfg.limits.hn_new)
+    try:
+        discovered += hackernews.fetch_top(limit=cfg.limits.hn_top)
+    except Exception:
+        pass
+    try:
+        discovered += hackernews.fetch_new(limit=cfg.limits.hn_new)
+    except Exception:
+        pass
 
     # GitHub trending
     for lang in cfg.github_trending.languages:
-        items = github_trending.fetch_trending(lang, limit=cfg.limits.github_trending)
-        items = github_trending.keyword_filter(items, cfg.github_trending.keywords_any)
-        discovered += items
+        try:
+            items = github_trending.fetch_trending(lang, limit=cfg.limits.github_trending)
+            items = github_trending.keyword_filter(items, cfg.github_trending.keywords_any)
+            discovered += items
+        except Exception:
+            continue
 
     # RSS feeds
     for f in cfg.rss_feeds:
-        discovered += rss.fetch_feed(f.name, f.url, limit=cfg.limits.rss)
+        try:
+            discovered += rss.fetch_feed(f.name, f.url, limit=cfg.limits.rss)
+        except Exception:
+            continue
 
     # HTML sources (no RSS)
     for s in cfg.html_sources:
-        discovered += html_scrape.fetch_recent_links(s.name, s.url, limit=25)
+        try:
+            discovered += html_scrape.fetch_recent_links(s.name, s.url, limit=25)
+        except Exception:
+            continue
 
     # Dev.to and Medium tags
     for tag in cfg.devto_tags:
-        discovered += devto.fetch_tag(tag, limit=cfg.limits.devto)
+        try:
+            discovered += devto.fetch_tag(tag, limit=cfg.limits.devto)
+        except Exception:
+            continue
     for tag in cfg.medium_tags:
-        discovered += medium.fetch_tag(tag, limit=cfg.limits.medium_tag)
+        try:
+            discovered += medium.fetch_tag(tag, limit=cfg.limits.medium_tag)
+        except Exception:
+            continue
 
     # PyPI
     for pkg in cfg.pypi_libraries:
@@ -116,8 +176,13 @@ def run(config_path: str | Path) -> None:
         discovered.append(pypi.as_item(pkg, version, project_url, published_at))
         state.pypi_versions[pkg] = version
 
-    # Write notes
+    # Write notes (cap total per run)
+    discovered.sort(key=lambda x: (x.published_at or datetime(1970, 1, 1, tzinfo=timezone.utc)), reverse=True)
+
+    created_count = 0
     for item in discovered:
+        if created_count >= cfg.limits.max_notes_per_run:
+            break
         if item.id in state.seen_ids:
             continue
         if not _is_relevant(item, all_keywords):
@@ -166,6 +231,7 @@ def run(config_path: str | Path) -> None:
 
         created = write_note_if_missing(out_path, note_txt)
         if created:
+            created_count += 1
             state.seen_ids.add(item.id)
         else:
             # If already exists, still mark as seen to avoid reprocessing

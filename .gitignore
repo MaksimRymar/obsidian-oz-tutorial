@@ -1,8 +1,9 @@
 .DS_Store
+**/.DS_Store
 __pycache__/
 *.pyc
 .venv/
 .env
 
-# Optional: ignore Obsidian cache/workspace if you don't want it versioned
-# Vault/.obsidian/workspace.json
+# Obsidian workspace is machine-specific noise
+Vault/.obsidian/workspace.json

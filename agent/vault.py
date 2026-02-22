@@ -75,6 +75,7 @@ def ensure_dirs(vault_dir: Path) -> None:
     (vault_dir / "Analyst-Skills" / "SQL").mkdir(parents=True, exist_ok=True)
     (vault_dir / "Analyst-Skills" / "AI-Tools").mkdir(parents=True, exist_ok=True)
     (vault_dir / "Analyst-Skills" / "Zendesk").mkdir(parents=True, exist_ok=True)
+    (vault_dir / "Analyst-Skills" / "Customer-Support-Analytics").mkdir(parents=True, exist_ok=True)
     (vault_dir / "Analyst-Skills" / "Tableau").mkdir(parents=True, exist_ok=True)
     (vault_dir / "Analyst-Skills" / "Presentations").mkdir(parents=True, exist_ok=True)
     (vault_dir / "Analyst-Skills" / "Productivity").mkdir(parents=True, exist_ok=True)

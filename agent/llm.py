@@ -22,11 +22,33 @@ def summarize(title: str, source: str, url: str, raw_text: str, domain: str) -> 
     """
 
     if not enabled():
-        # Heuristic fallback
-        summary = f"{title}. Relevant to {domain} work; see the source for details."
-        how = "- Skim the key sections and capture one concrete technique to try in your next analysis.\n"
-        how += "- If it includes code/examples, reproduce them in a small notebook and adapt to your dataset."
-        return LLMResult(summary=summary, how_to_apply=how, relevance="🟡")
+        # Heuristic fallback: use whatever content we have (RSS excerpt, etc.)
+        try:
+            from bs4 import BeautifulSoup
+
+            plain = BeautifulSoup(raw_text or "", "html.parser").get_text(" ", strip=True)
+        except Exception:
+            plain = (raw_text or "").strip()
+
+        plain = " ".join((plain or "").split())
+        if plain:
+            summary = plain[:600].rstrip() + ("…" if len(plain) > 600 else "")
+        else:
+            summary = f"{title}."
+
+        how = "- Extract 1 actionable tactic from this post and try it on a real dataset this week.\n"
+        if domain in ("Python", "AI-Tools"):
+            how += "- Reproduce the example in a notebook; then refactor into a reusable function.\n"
+        if domain in ("SQL",):
+            how += "- Write the query in a scratchpad and run EXPLAIN/QUERY PLAN to verify performance.\n"
+        how += "- Add a short note: what changed in your workflow?"
+
+        # Conservative default
+        relevance = "🟡"
+        if any(k in (title.lower() + " " + plain.lower()) for k in ["release", "released", "breaking", "deprec", "security", "new feature"]):
+            relevance = "🔴"
+
+        return LLMResult(summary=summary, how_to_apply=how, relevance=relevance)
 
     # Lazy import so local runs work without the dependency configured in all envs.
     from openai import OpenAI

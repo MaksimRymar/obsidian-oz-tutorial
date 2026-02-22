@@ -1,0 +1,27 @@
+---
+title: Financial services
+date: '2026-02-22'
+source: https://claude.com/solutions/financial-services
+domain: AI-Tools
+relevance: 🟡
+tags:
+- '#ai'
+related: []
+status: unread
+---
+
+> **TL;DR:** Financial services.
+
+## What’s new and why it matters
+Financial services.
+
+## How to apply
+- Extract 1 actionable tactic from this post and try it on a real dataset this week.
+- Reproduce the example in a notebook; then refactor into a reusable function.
+- Add a short note: what changed in your workflow?
+
+## Relevance
+🟡
+
+## Source
+https://claude.com/solutions/financial-services

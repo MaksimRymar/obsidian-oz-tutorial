@@ -10,6 +10,8 @@ limits:
   devto: 30
   medium_tag: 30
   rss: 50
+  # Hard cap on how many new notes we will create per run (prevents vault spam).
+  max_notes_per_run: 80
 
 pypi_libraries:
   - pandas
@@ -131,9 +133,34 @@ classification:
       - zendesk
       - explore
       - answer bot
+      - messaging
+      - sunshine
+      - ticket fields
+      - triggers
+      - automations
+      - views
+      - macros
+      - api
+    Customer-Support-Analytics:
+      - customer support analytics
+      - support analytics
+      - ticket analytics
+      - zendesk explore
       - csat
       - nps
-      - support
+      - fcr
+      - first contact resolution
+      - first response time
+      - first reply time
+      - sla
+      - handle time
+      - aht
+      - backlog
+      - deflection
+      - contact reason
+      - support dashboard
+      - time to resolution
+      - ttr
     Tableau:
       - tableau
       - lod
@@ -168,7 +195,8 @@ classification:
     python: [python, pandas, polars, duckdb, jupyter, streamlit, plotly, pydantic]
     sql: [sql, cte, window, postgres, postgresql, snowflake, bigquery, dbt]
     ai: [llm, rag, langchain, embeddings, prompt, text-to-sql, chatgpt, claude, gemini]
-    zendesk: [zendesk, explore, answer bot, csat, nps]
+    zendesk: [zendesk, explore, answer bot, sunshine, triggers, automations, views, macros]
+    support-analytics: [support analytics, customer support analytics, ticket analytics, csat, nps, fcr, sla, backlog, deflection, contact reason, first response time, first reply time, time to resolution]
     tableau: [tableau, lod, power bi, looker, superset, metabase]
     presentations: [storytelling, slides, deck, executive summary, marp, reveal.js, gamma, beautiful.ai]
     career: [career, certification, interview, resume]

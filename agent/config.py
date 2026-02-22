@@ -29,6 +29,7 @@ class LimitsCfg:
     devto: int = 30
     medium_tag: int = 30
     rss: int = 50
+    max_notes_per_run: int = 80
 
 
 @dataclass(frozen=True)
