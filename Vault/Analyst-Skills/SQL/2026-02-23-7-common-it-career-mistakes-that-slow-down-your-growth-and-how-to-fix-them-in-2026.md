@@ -1,0 +1,44 @@
+---
+title: 7 Common IT Career Mistakes That Slow Down Your Growth (And How to Fix Them
+  in 2026)
+date: '2026-02-23'
+source: https://medium.com/@LuckyDigiProBook/7-common-it-career-mistakes-that-slow-down-your-growth-and-how-to-fix-them-in-2026-905d9005d1e7?source=rss------sql-5
+domain: SQL
+relevance: 🟡
+tags:
+- '#career'
+- '#sql'
+- '#tutorial'
+related:
+- '[[2026-02-23-hybrid-htmx-minimal-js-in-django-2026-when-to-add-alpinejs]]'
+- '[[2026-02-23-10-copy-paste-chatgpt-prompts-to-turn-ideas-into-income-2026-edition]]'
+- '[[2026-02-22-duckdb-for-clickstream-analytics-sessionization-window-functions-and-parquet-layouts-that-stay]]'
+- '[[2026-02-22-sql-syntax-that-improved-my-productivity-duckdb]]'
+- '[[2026-02-22-building-a-scalable-financial-forecasting-engine-using-python-sql-and-machine-learning]]'
+- '[[2026-02-23-its-3-am-production-is-down-your-only-tool-is-curl]]'
+status: unread
+---
+
+> **TL;DR:** The IT industry offers massive growth opportunities — but many professionals unknowingly slow their own progress. Continue reading on Medium »
+
+## What’s new and why it matters
+The IT industry offers massive growth opportunities — but many professionals unknowingly slow their own progress. Continue reading on Medium »
+
+## How to apply
+- Extract 1 actionable tactic from this post and try it on a real dataset this week.
+- Write the query in a scratchpad and run EXPLAIN/QUERY PLAN to verify performance.
+- Add a short note: what changed in your workflow?
+
+## Relevance
+🟡
+
+## Source
+https://medium.com/@LuckyDigiProBook/7-common-it-career-mistakes-that-slow-down-your-growth-and-how-to-fix-them-in-2026-905d9005d1e7?source=rss------sql-5
+
+## Related notes
+- [[2026-02-23-hybrid-htmx-minimal-js-in-django-2026-when-to-add-alpinejs]]
+- [[2026-02-23-10-copy-paste-chatgpt-prompts-to-turn-ideas-into-income-2026-edition]]
+- [[2026-02-22-duckdb-for-clickstream-analytics-sessionization-window-functions-and-parquet-layouts-that-stay]]
+- [[2026-02-22-sql-syntax-that-improved-my-productivity-duckdb]]
+- [[2026-02-22-building-a-scalable-financial-forecasting-engine-using-python-sql-and-machine-learning]]
+- [[2026-02-23-its-3-am-production-is-down-your-only-tool-is-curl]]
