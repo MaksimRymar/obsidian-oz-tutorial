@@ -1,0 +1,26 @@
+---
+title: 'Show HN: EV424 – Reproducible Integrity Receipts (Don''t Trust, Verify)'
+date: '2026-02-26'
+source: https://github.com/ev424verify/ev424-hub
+domain: Productivity
+relevance: 🟡
+tags:
+- '#productivity'
+related: []
+status: unread
+---
+
+> **TL;DR:** Show HN: EV424 – Reproducible Integrity Receipts (Don't Trust, Verify).
+
+## What’s new and why it matters
+Show HN: EV424 – Reproducible Integrity Receipts (Don't Trust, Verify).
+
+## How to apply
+- Extract 1 actionable tactic from this post and try it on a real dataset this week.
+- Add a short note: what changed in your workflow?
+
+## Relevance
+🟡
+
+## Source
+https://github.com/ev424verify/ev424-hub
