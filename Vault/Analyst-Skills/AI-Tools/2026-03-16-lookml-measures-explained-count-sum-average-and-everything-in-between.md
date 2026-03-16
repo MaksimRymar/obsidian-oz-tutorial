@@ -1,0 +1,41 @@
+---
+title: 'LookML Measures Explained: Count, Sum, Average, and Everything In Between'
+date: '2026-03-16'
+source: https://medium.com/@abdirahman2ali/lookml-measures-explained-count-sum-average-and-everything-in-between-96db5b80e71f?source=rss------business_intelligence-5
+domain: AI-Tools
+relevance: 🟡
+tags:
+- '#ai'
+related:
+- '[[2026-03-16-lookml-measures-explained-count-sum-average-and-everything-in-between]]'
+- '[[2026-03-02-lookml-dimensions-explained-types-labels-drill-fields-and-links]]'
+- '[[2026-03-12-differences-between-business-intelligence-and-data-analytics]]'
+- '[[2026-03-07-3-amazing-uses-cases-of-hugging-face-that-every-data-scientist-should-know]]'
+- '[[2026-03-12-the-data-analysts-playbook-10-reporting-tools-to-supercharge-your-business-in-2026]]'
+- '[[2026-03-06-one-schema-five-outputs-the-problem-of-designing-databases-for-multiple-orms]]'
+status: unread
+---
+
+> **TL;DR:** If you’ve been following along, you know how to build dimensions that business users can find, understand, and act on. Labels… Continue reading on Medium »
+
+## What’s new and why it matters
+If you’ve been following along, you know how to build dimensions that business users can find, understand, and act on. Labels… Continue reading on Medium »
+
+## How to apply
+- Extract 1 actionable tactic from this post and try it on a real dataset this week.
+- Reproduce the example in a notebook; then refactor into a reusable function.
+- Add a short note: what changed in your workflow?
+
+## Relevance
+🟡
+
+## Source
+https://medium.com/@abdirahman2ali/lookml-measures-explained-count-sum-average-and-everything-in-between-96db5b80e71f?source=rss------business_intelligence-5
+
+## Related notes
+- [[2026-03-16-lookml-measures-explained-count-sum-average-and-everything-in-between]]
+- [[2026-03-02-lookml-dimensions-explained-types-labels-drill-fields-and-links]]
+- [[2026-03-12-differences-between-business-intelligence-and-data-analytics]]
+- [[2026-03-07-3-amazing-uses-cases-of-hugging-face-that-every-data-scientist-should-know]]
+- [[2026-03-12-the-data-analysts-playbook-10-reporting-tools-to-supercharge-your-business-in-2026]]
+- [[2026-03-06-one-schema-five-outputs-the-problem-of-designing-databases-for-multiple-orms]]
