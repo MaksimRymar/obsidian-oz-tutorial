@@ -1,0 +1,49 @@
+---
+title: Build a Real-Time Anomaly Detection System
+date: '2026-08-22'
+source: https://dev.to/qingluan/build-a-real-time-anomaly-detection-system-8ok
+domain: SQL
+relevance: 🟡
+tags:
+- '#ai'
+- '#best-practice'
+- '#feature'
+- '#library'
+- '#python'
+- '#sql'
+- '#support-analytics'
+- '#tool'
+- '#tutorial'
+related:
+- '[[2026-08-08-build-a-real-time-data-streaming-pipeline]]'
+- '[[2026-05-15-build-a-basic-flask-feed-like-chat-app-to-know-how-message-application-works]]'
+- '[[2026-04-08-how-building-a-streaming-sql-api-in-nodejs-changed-my-approach-to-real-time-data]]'
+- '[[2026-07-18-im-not-a-real-developer-so-i-built-my-app-the-simplest-way-possible]]'
+- '[[2026-04-12-websocket-price-streams-from-binance-free]]'
+- '[[2026-03-16-surrealdb-how-i-deleted-70-of-my-backend-code-part-2]]'
+status: unread
+---
+
+> **TL;DR:** Build a Real-Time Anomaly Detection System tags: python, ml, monitoring, tutorial tags: python, ml, monitoring, tutorial tags: python, ml, monitoring, tutorial tags: python, fastapi, tutorial, webdev tags: python, fastap…
+
+## What’s new and why it matters
+Build a Real-Time Anomaly Detection System tags: python, ml, monitoring, tutorial tags: python, ml, monitoring, tutorial tags: python, ml, monitoring, tutorial tags: python, fastapi, tutorial, webdev tags: python, fastapi, tutorial, webdev tags: python, fastapi, tutorial, webdev Build a Real-Time Notification System with Server-Sent Events Your users are waiting for that "new message" alert, but your current polling strategy is burning database CPU and draining battery life. Every few seconds, your frontend fires an HTTP request asking, "Is there anything new?" and the server replies, "Nope."…
+
+## How to apply
+- Extract 1 actionable tactic from this post and try it on a real dataset this week.
+- Write the query in a scratchpad and run EXPLAIN/QUERY PLAN to verify performance.
+- Add a short note: what changed in your workflow?
+
+## Relevance
+🟡
+
+## Source
+https://dev.to/qingluan/build-a-real-time-anomaly-detection-system-8ok
+
+## Related notes
+- [[2026-08-08-build-a-real-time-data-streaming-pipeline]]
+- [[2026-05-15-build-a-basic-flask-feed-like-chat-app-to-know-how-message-application-works]]
+- [[2026-04-08-how-building-a-streaming-sql-api-in-nodejs-changed-my-approach-to-real-time-data]]
+- [[2026-07-18-im-not-a-real-developer-so-i-built-my-app-the-simplest-way-possible]]
+- [[2026-04-12-websocket-price-streams-from-binance-free]]
+- [[2026-03-16-surrealdb-how-i-deleted-70-of-my-backend-code-part-2]]
