@@ -1,0 +1,43 @@
+---
+title: DaisyRose 27B Draws a Python Reading a Book
+date: '2026-11-22'
+source: https://realpython.com/ai-benchmark-daisyrose-27b/
+domain: Productivity
+relevance: 🔴
+tags:
+- '#feature'
+- '#productivity'
+- '#python'
+- '#zendesk'
+related:
+- '[[2026-11-21-gemini-4-neon-draws-a-python-reading-a-book]]'
+- '[[2026-10-14-gemini-4-argon-draws-a-python-reading-a-book]]'
+- '[[2026-11-10-gemini-4-carbon-draws-a-python-reading-a-book]]'
+- '[[2026-11-10-claude-fable-52-draws-a-python-reading-a-book]]'
+- '[[2026-11-18-gpt-62-sol-draws-a-python-reading-a-book]]'
+- '[[2026-11-18-gpt-62-astra-draws-a-python-reading-a-book]]'
+status: unread
+---
+
+> **TL;DR:** Explore DaisyRose 27B's Python code, turtle drawing, and responses to small tasks that check modern syntax, release knowledge, focused edits, and made-up functions.
+
+## What’s new and why it matters
+Explore DaisyRose 27B's Python code, turtle drawing, and responses to small tasks that check modern syntax, release knowledge, focused edits, and made-up functions.
+
+## How to apply
+- Extract 1 actionable tactic from this post and try it on a real dataset this week.
+- Add a short note: what changed in your workflow?
+
+## Relevance
+🔴
+
+## Source
+https://realpython.com/ai-benchmark-daisyrose-27b/
+
+## Related notes
+- [[2026-11-21-gemini-4-neon-draws-a-python-reading-a-book]]
+- [[2026-10-14-gemini-4-argon-draws-a-python-reading-a-book]]
+- [[2026-11-10-gemini-4-carbon-draws-a-python-reading-a-book]]
+- [[2026-11-10-claude-fable-52-draws-a-python-reading-a-book]]
+- [[2026-11-18-gpt-62-sol-draws-a-python-reading-a-book]]
+- [[2026-11-18-gpt-62-astra-draws-a-python-reading-a-book]]
